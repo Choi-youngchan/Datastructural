@@ -55,7 +55,7 @@ namespace Program
             
             doubleLL.PushBack(10);
 
-            Console.WriteLine(doubleLL.data);
+           //  Console.WriteLine(doubleLL.data);
 
         }
     }

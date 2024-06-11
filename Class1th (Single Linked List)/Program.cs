@@ -50,7 +50,7 @@
                         previousNode = currentNode;
                         currentNode = currentNode.next;
                     }
-                    previousNode = currentNode.next;
+                    previousNode.next = currentNode.next;
                 }
                 size--;
             }
@@ -152,7 +152,6 @@
             singlinkedlist.PushBack(20);
             singlinkedlist.PushBack(10);
 
-            singlinkedlist.RemoveBack();
             singlinkedlist.RemoveBack();
 
 
