@@ -2,80 +2,61 @@
 
 namespace Program
 {
-    public class SingleLinkedList<T>
+    public class DoubleLinkedList<T>
     {
         private class Node
         {
-            public T data;
-            public Node next;
+           public T data;
+           public Node previous;
+           public Node next;
         }
-        
-        Node head;
+        private Node head;
+        private Node tail;
         private int size;
-
-        public SingleLinkedList()
+        
+        public DoubleLinkedList()
         {
             size = 0;
             head = null;
+            tail = null;
         }
-
-        public void PushFront(T data)
+        public void PushBack(T data)
         {
-            // head.next = null;
-
-            // if (size == 0)
-
-            if(head == null)
+            Node newNode = new Node();
+            if (tail == null)
             {
-                head = new Node();
-                head.data = data;
-                head.next = null;
-            }
-            else if(head != null)
-            {
-                Node newNode = new Node();
-                newNode.next = head;
-                newNode.data = data;
+                tail = newNode;
                 head = newNode;
+                newNode.data = data;
+                newNode.previous = null;
+                newNode.next = null;
+
+            }
+            else
+            {
+                tail.next = newNode;
+                newNode.previous = tail;
+
+                tail = newNode;
+
+                newNode.data = data;
+                newNode.next = null;
             }
             size++;
         }
-        public void Show()
-        {
-               Node currentNode = head;
-               
-               while(currentNode != null)
-               {
-                   Console.WriteLine(currentNode.data);
-                   currentNode = currentNode.next;
-               }
-            // ---------------------------------
-            //   Node currentNode = new Node();
-            //   currentNode = head;
-            //  if (currentNode.data != null)
-            //      for (int i = 0; i < size; i++)
-            //       {
-            //          currentNode = currentNode.next;
-            //          Console.WriteLine(currentNode.data);
-            //       }
-            // 
-        }
-        public int Size()
-        {
-            return size;
-        }
-    }
 
+
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            SingleLinkedList<int> singlinkedlist = new SingleLinkedList<int>();
-            singlinkedlist.PushFront(30);
-            singlinkedlist.PushFront(20);
-            singlinkedlist.PushFront(10);
-            singlinkedlist.Show();
-            Console.WriteLine(singlinkedlist.Size());
+            DoubleLinkedList<int> doubleLL= new DoubleLinkedList<int>();
+            
+            doubleLL.PushBack(10);
+
+            Console.WriteLine(doubleLL.data);
+
         }
     }
 }
