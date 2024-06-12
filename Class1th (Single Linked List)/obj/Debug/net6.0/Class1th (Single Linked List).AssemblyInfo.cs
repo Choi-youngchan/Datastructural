@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Class1th (Single Linked List)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d3a9941bc5d22b073e42930c0a62e4e184234d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b073264cd16a73016244526215adb2aa9156392c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Class1th (Single Linked List)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Class1th (Single Linked List)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
