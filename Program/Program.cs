@@ -1,52 +1,90 @@
-﻿
+﻿using System.Linq;
+
 namespace Program
 {
-    public class CircleLinkedList<T>
+    public class Stack<T>
     {
-        private class Node
+        private int top;
+
+        private readonly int arraySize;
+        private T [] array;
+        private T error;
+
+        public Stack()
         {
-            public T data;
-            public Node next;
+            top = -1;
+            arraySize = 10;
+
+            array = new T[arraySize];
         }
-        private int size;
-        private Node head;
-        public CircleLinkedList()
+        public void Push(T data)
         {
-            size = 0;
-            head = null;
-        }
-        public void PushBack(T data)
-        {
-            Node newNode = new Node();
-            if (size == 0)
+            if (top < arraySize - 1)
             {
-                head = newNode;
-                newNode.next = head;
-                newNode.data = data;
+                array[++top] = data;
             }
-            // else if (size == 1)
-            // {
-            //     newNode = head.next;
-            //     newNode.next = head;
-            //     head = newNode;
-            //     newNode.data = data;
-            // }
             else
             {
-                newNode.next = head.next;
-                head.next = newNode;
-                head = newNode;
-                newNode.data = data;
+                Console.WriteLine("Stack Overflow");
             }
-            size++;
         }
-
+       public T Peek()
+       {
+           return array[top];
+       }
+       public T Pop() 
+       {
+           if (arraySize > 0)
+           {
+               return array[top--];
+           }
+           else
+           {
+                Console.WriteLine("Stack is Empty");
+                return error;
+           }
+       }
+        public bool Contains(T data)
+        {
+            for (int i = 0; i <= top; i ++)
+            {
+                if (array[i].ToString() == data.ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+         static bool CheckBracket(string content)
+         {
+             // content "{" "[" "(" ")" "]" "}";
+             Stack<char> stack = new Stack<char>();
+            //  (content.Contains() == true;)
+             if (Contains(content) == true)
+             {
+                 if ( content == "{" ) 
+                    { stack.Push('{'); }
+                 else if (content ==  "[")
+                    { stack.Push('['); }
+                 else if (content == "(") 
+                    { stack.Push('('); }
+             }
+         
+         }
     }
-
     internal class Program
     {
+
         static void Main(string[] args)
         {
+             Stack<int> stack = new Stack<int>();
+             stack.Push(1);
+             stack.Push(2);
+             stack.Push(3);
+             stack.Push(4);
+             stack.Push(5);
+             stack.Pop();
+             Console.WriteLine(stack.Contains(5));
 
         }
     }
