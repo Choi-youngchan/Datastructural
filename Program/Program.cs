@@ -2,90 +2,76 @@
 
 namespace Program
 {
-    public class Stack<T>
+    public class CircleQueue<T>
     {
-        private int top;
+        private int front;
+        private int rear;
+        private int count;
 
         private readonly int arraySize;
-        private T [] array;
-        private T error;
+        T[] array;
 
-        public Stack()
+        public CircleQueue()
         {
-            top = -1;
-            arraySize = 10;
+            arraySize = 5;
+            front = arraySize - 1;
+            rear = arraySize - 1;
 
+            count = 0;
             array = new T[arraySize];
         }
-        public void Push(T data)
+        public void EnQueue(T data)
         {
-            if (top < arraySize - 1)
+            if (rear < 5 )
             {
-                array[++top] = data;
+                array[rear++] = data;
+                //array[front] = default;
+                
+                count++;
+
             }
             else
             {
-                Console.WriteLine("Stack Overflow");
+                rear = rear % 5;
+                array[rear++] = data;
+                array[front] = array[rear - 1];
+                // if (rear == 0)
+                // {
+                //     front = 4;
+                // }
+                // else
+                // {
+                //     front = rear - 1;
+                // }
+                count = (count % 5) + 1;
             }
         }
-       public T Peek()
-       {
-           return array[top];
-       }
-       public T Pop() 
-       {
-           if (arraySize > 0)
-           {
-               return array[top--];
-           }
-           else
-           {
-                Console.WriteLine("Stack is Empty");
-                return error;
-           }
-       }
-        public bool Contains(T data)
+        public T Peek()
         {
-            for (int i = 0; i <= top; i ++)
-            {
-                if (array[i].ToString() == data.ToString())
-                {
-                    return true;
-                }
-            }
-            return false;
+            return array[front];
         }
-         static bool CheckBracket(string content)
-         {
-             // content "{" "[" "(" ")" "]" "}";
-             Stack<char> stack = new Stack<char>();
-            //  (content.Contains() == true;)
-             if (Contains(content) == true)
-             {
-                 if ( content == "{" ) 
-                    { stack.Push('{'); }
-                 else if (content ==  "[")
-                    { stack.Push('['); }
-                 else if (content == "(") 
-                    { stack.Push('('); }
-             }
-         
-         }
+        public void Show()
+        {
+            for (int i = front; i < rear; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+        }
+
     }
+
     internal class Program
     {
-
         static void Main(string[] args)
         {
-             Stack<int> stack = new Stack<int>();
-             stack.Push(1);
-             stack.Push(2);
-             stack.Push(3);
-             stack.Push(4);
-             stack.Push(5);
-             stack.Pop();
-             Console.WriteLine(stack.Contains(5));
-
+            CircleQueue<int> queue = new CircleQueue<int>();
+            queue.EnQueue(10);
+            //queue.EnQueue(20);
+            //queue.EnQueue(30);
+            //queue.EnQueue(40);
+            //
+            //queue.Peek();
+             queue.Show();
         }
     }
 }
