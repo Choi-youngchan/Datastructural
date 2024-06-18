@@ -2,76 +2,93 @@
 
 namespace Program
 {
-    public class CircleQueue<T>
+    public class Vector<T>
     {
-        private int front;
-        private int rear;
-        private int count;
-
-        private readonly int arraySize;
-        T[] array;
-
-        public CircleQueue()
+        private int size;
+        private int capacity;
+        private T[] array;
+        public Vector()
         {
-            arraySize = 5;
-            front = arraySize - 1;
-            rear = arraySize - 1;
-
-            count = 0;
-            array = new T[arraySize];
+            size = 0;
+            capacity = 0;
+            array = null;
         }
-        public void EnQueue(T data)
+        public void Resize(int newSize)
         {
-            if (rear < 5 )
+            capacity = newSize;
+            T[] newArray = new T[capacity];
+            for (int i = 0; i < size; i++)
             {
-                array[rear++] = data;
-                //array[front] = default;
-                
-                count++;
-
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+        public void Add(T data)
+        {
+            if(capacity <= 0)
+            {
+                Resize(1);
+            }
+            else if (size >= capacity)
+            {
+                Resize(capacity * 2);
+            }
+            array[size++] = data; 
+        }
+        public void RemoveAt(int index)
+        {
+            // for (int i = 0; i < size; i++) 
+            // { 
+            //     array[index+i] = array [index+i + 1];
+            // }
+            // size--;
+            for(int i = index; i < size-1; i++)
+            {
+                array[i] = array[i+1];
+            }
+            array[size - 1] = default;
+        }
+        public void Reserve(int newSize)
+        {
+            if(newSize < capacity)
+            {
+                return;
             }
             else
             {
-                rear = rear % 5;
-                array[rear++] = data;
-                array[front] = array[rear - 1];
-                // if (rear == 0)
-                // {
-                //     front = 4;
-                // }
-                // else
-                // {
-                //     front = rear - 1;
-                // }
-                count = (count % 5) + 1;
+                Resize(newSize);
             }
         }
-        public T Peek()
+
+        public T this [int index]
         {
-            return array[front];
+            get { return array[index]; }
         }
-        public void Show()
+        public int Count()
         {
-            for (int i = front; i < rear; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            return size;
         }
 
     }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            CircleQueue<int> queue = new CircleQueue<int>();
-            queue.EnQueue(10);
-            //queue.EnQueue(20);
-            //queue.EnQueue(30);
-            //queue.EnQueue(40);
-            //
-            //queue.Peek();
-             queue.Show();
+            Vector<int> list = new Vector<int>();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+
+            list.RemoveAt(1);
+            list.RemoveAt(1);
+
+            for (int i = 0; i < list.Count(); i++)
+            { 
+                Console.WriteLine(list[i]);
+            }
+
         }
     }
 }

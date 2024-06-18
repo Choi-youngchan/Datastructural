@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class2th (Double Linked Lis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class3th (Circle Linked List)", "..\Class3th (Circle Linked List)\Class3th (Circle Linked List).csproj", "{685C41B9-292A-41A1-A198-783AC3091EDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class4th (Stack)", "..\Class4th (Stack)\Class4th (Stack).csproj", "{9CF1629F-A801-4F38-8290-91B91800ED62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class4th (Stack)", "..\Class4th (Stack)\Class4th (Stack).csproj", "{9CF1629F-A801-4F38-8290-91B91800ED62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class5th (Linear Queue)", "..\Class5th (Linear Queue)\Class5th (Linear Queue).csproj", "{E8F64221-A5B7-400F-9A4A-C8D8AC340CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class5th (Linear Queue)", "..\Class5th (Linear Queue)\Class5th (Linear Queue).csproj", "{E8F64221-A5B7-400F-9A4A-C8D8AC340CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class6th (Circle Queue)", "..\Class6th (Circle Queue)\Class6th (Circle Queue).csproj", "{32D72731-2846-4E5B-B21D-AD1487E956A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E8F64221-A5B7-400F-9A4A-C8D8AC340CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F64221-A5B7-400F-9A4A-C8D8AC340CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F64221-A5B7-400F-9A4A-C8D8AC340CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D72731-2846-4E5B-B21D-AD1487E956A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D72731-2846-4E5B-B21D-AD1487E956A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D72731-2846-4E5B-B21D-AD1487E956A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D72731-2846-4E5B-B21D-AD1487E956A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
