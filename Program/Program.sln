@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class8th (String)", "..\Cla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class9th(File Input & Output)", "..\Class9th(File Input & Output)\Class9th(File Input & Output).csproj", "{178E0C75-1B52-440B-AD5C-BCBD46D555EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class10th (Hash Table)", "..\Class10th (Hash Table)\Class10th (Hash Table).csproj", "{02E45853-172C-40B6-9BB0-371CB8790E20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class10th (Hash Table)", "..\Class10th (Hash Table)\Class10th (Hash Table).csproj", "{02E45853-172C-40B6-9BB0-371CB8790E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class11th(Binary Tree)", "..\Class11th(Binary Tree)\Class11th(Binary Tree).csproj", "{ECAC7583-A947-4A71-A266-3DA7E22150D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{02E45853-172C-40B6-9BB0-371CB8790E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E45853-172C-40B6-9BB0-371CB8790E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E45853-172C-40B6-9BB0-371CB8790E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAC7583-A947-4A71-A266-3DA7E22150D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAC7583-A947-4A71-A266-3DA7E22150D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAC7583-A947-4A71-A266-3DA7E22150D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAC7583-A947-4A71-A266-3DA7E22150D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
