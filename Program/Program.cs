@@ -1,141 +1,62 @@
 ﻿namespace Program
 {
-    public class Heap
+    public class AdjacencyList<T>
     {
+        private class Node
+        {
+            private T data;
+            private Node next;
+            public Node(T data, Node link = null)
+            {
+                this.data = data;
+                next = link;
+            }
+        }
         private int size;
         private int arraySize;
-        private int[] array;
-        int error = -99999;
-        public Heap()
+        private T[] vertex;
+        private Node[] list;
+        public AdjacencyList()
         {
             size = 0;
-            arraySize = 8;
-            array = new int[arraySize];
-        }
-        public void Insert(int data)
-        {
-            // if (size == arraySize)
+            arraySize = 10;
+            vertex = new T[arraySize];
+            list = new Node[arraySize];
+            // for(int i =  0; i < arraySize; i++)
             // {
-            //     Console.WriteLine("full");
+            //     list[i] = new Node();
             // }
-            // else if (size <arraySize)
-            // {
-            //     array[++size] = data;
-            //     int child = size;
-            //     int parent = size / 2;
-            //     if (parent >= 1)
-            //     {
-            //         while (array[child] > array[parent])
-            //         {
-            //             Swap(ref child, ref parent);
-            //         }
-            //         array[child] = array[child];
-            //         array[parent] = array[parent];
-            //     }
-            // 
-            // }
-            // -------------------------------------------
-            if(size >= arraySize-1)
-            {
-                Console.WriteLine("Heap is full");
-            }
-            else
-            {
-                array[++size] = data;
-                int child = size;
-                int parent= size / 2;
-                while (child > 1)
-                {
-                    if (array[child] > array[parent])
-                    {
-                        Swap(ref array[child], ref array[parent]);
-                    }
-                    child = parent;
-                    parent = child / 2;
-                }
-            }
         }
-        private void Swap(ref int x,ref int y)
+        public void Insert(T data)
         {
-            int temp = x;
-            x = y;
-            y = temp;
+            if(size >= arraySize) 
+            {
+                Console.WriteLine("Full");
+                    return;
+            }
+            vertex[size] = data;
+            size++;
         }
-        public void Show()
+        public void Connect(int x, int y)
         {
-            for ( int i = 1; i <= size; i++ )
-            {
-                Console.Write(array[i] + " ");
-            }
-        }
-        public int Remove()
-        {
-            if(size <= 0)
-            {
-                Console.WriteLine("Heap is Empty");
-                return error;
-            }
-            else
-            {
-                int value = array[1];
-                array[1] = array[size];
-                array[size] = 0;
-                size--; 
-                int parent = 1;
-                int childLeft = parent * 2;
-                int childRight = parent * 2 + 1;
-
-                while (parent == 1)
-                {
-                    if (array[childLeft] > array[parent] || 
-                        array[childRight] > array[parent])
-                    {
-                        if(array[childLeft] > array[childRight])
-                        {
-                            Swap(ref array[parent], ref array[childLeft]);
-                            childLeft = parent;
-                            parent = childLeft / 2;
-
-                        }
-                        else if (array[childRight] > array[childLeft])
-                        {
-                            Swap(ref array[parent], ref array[childRight]);
-                            childRight = parent;
-                            parent = childRight / 2;
-                        }
-                    }
-                    else if(array[childLeft] < array[parent] &&
-                            array[childRight] < array[parent])
-                    {
-                        break;
-                    }
-                }
-                return value;
-            }
-
+            list[x] = vertex[y];
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Heap heap = new Heap();
-            heap.Insert(10);  
-            heap.Insert(11);  
-            heap.Insert(12);  
-            heap.Insert(9);   
-            heap.Insert(8);   
-            heap.Insert(13);  
-            heap.Insert(15);
-            Console.WriteLine(heap.Remove());
-            Console.WriteLine(heap.Remove());
-            Console.WriteLine(heap.Remove());
-            Console.WriteLine(heap.Remove());
-            Console.WriteLine(heap.Remove());
-            Console.WriteLine(heap.Remove());
+            #region 인접 리스트
+            // 그래프의 각 정점에 인접한 정점들을 연결 리스트로 표현하는 방법입니다.
 
+            // 장점
+            // 그래프의 모든 간선의 수를 O(V+E)로 표현할 수 있습니다ㅏ.
 
-            heap.Show();
+            //단점
+            // 두 정점을 연결하는 간선을 조회하거나 정점의 차수를 알기 위해서 정점의 인접리스트를 모두 탐색해야 하므로,
+            // 정점의 차수만큼의 시간이 필요합니다.
+
+            #endregion
         }
     }
 }
