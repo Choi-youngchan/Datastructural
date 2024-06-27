@@ -1,62 +1,199 @@
 ﻿namespace Program
 {
-    public class AdjacencyList<T>
+    public class BinarySearchTree
     {
-        private class Node
+        public class Node
         {
-            private T data;
-            private Node next;
-            public Node(T data, Node link = null)
+            public int data;
+            public Node left;
+            public Node right;
+            public Node()
             {
-                this.data = data;
-                next = link;
+                data = default;
             }
         }
-        private int size;
-        private int arraySize;
-        private T[] vertex;
-        private Node[] list;
-        public AdjacencyList()
+        public Node root;
+        public BinarySearchTree()
         {
-            size = 0;
-            arraySize = 10;
-            vertex = new T[arraySize];
-            list = new Node[arraySize];
-            // for(int i =  0; i < arraySize; i++)
+            root = null;
+        }
+        public void Insert(int data)
+        {
+            // if (root == null)
             // {
-            //     list[i] = new Node();
+            //     root = CreateNode(data);
             // }
-        }
-        public void Insert(T data)
-        {
-            if(size >= arraySize) 
+            // else
+            // {
+            //     Node currentNode = root;
+            //     if (currentNode.data == data)
+            //     {
+            //         return;
+            //     }
+            //     if (currentNode.data > data)
+            //     {
+            //         if (currentNode.left == null)
+            //         {
+            //             currentNode.left = CreateNode(data);
+            //         }
+            //         else if (currentNode.left != null)
+            //         {
+            //             currentNode = currentNode.left;
+            //             Insert(data);
+            //         }
+            //     }
+            //     else if (currentNode.data < data)
+            //     {
+            //         if (currentNode.right == null)
+            //         {
+            //             currentNode.right = CreateNode(data);
+            //         }
+            //         else if (currentNode.right != null)
+            //         {
+            //             currentNode = currentNode.right;
+            //             Insert(data);
+            //         }
+            //     }
+            // }
+            // -----------------------------------------------
+            if (root == null)
             {
-                Console.WriteLine("Full");
-                    return;
+                root = CreateNode(data);
             }
-            vertex[size] = data;
-            size++;
+            else
+            {
+                Node currentNode = root;
+                while (currentNode != null)
+                {
+                    if(currentNode.data > data)
+                    {
+                        if(currentNode.left == null)
+                        {
+                            currentNode.left = CreateNode(data);
+                            break;
+                        }
+                        else
+                        {
+                            currentNode= currentNode.left;
+                        }
+                    }
+                    else
+                    {
+                        if (currentNode.right == null)
+                        {
+                            currentNode.right = CreateNode(data);
+                            break;
+                        }
+                        else
+                        {
+                            currentNode = currentNode.right;
+                        }
+                    }
+                }
+            }
         }
-        public void Connect(int x, int y)
+        Node CreateNode(int data)
         {
-            list[x] = vertex[y];
+            Node node = new Node();
+            node.data = data;
+            node.left = null;
+            node.right = null;
+            return node;
+        }
+        public void Inorder(Node root)
+        {
+            if (root != null)
+            {
+                Inorder(root.left);
+                Console.Write(root.data + " ");
+                Inorder(root.right);
+            }
+        }
+        public bool Find(int data)
+        {
+            // Node currentNode = root;
+            // if (currentNode == null)
+            // {
+            //     Console.WriteLine("Empty");
+            //     return false;
+            // }
+            // if (currentNode.data == data)
+            // {
+            //     return true;
+            // }
+            // else
+            // {
+            //     while (currentNode != null)
+            //     {
+            //         if (currentNode.data > data)
+            //         {
+            // 
+            //             if (currentNode.data == data)
+            //             {
+            //                 return true;
+            //             }
+            //             else
+            //             {
+            //                 currentNode = currentNode.left;
+            //             }
+            // 
+            //         }
+            //         else if (currentNode.data < data)
+            //         {
+            //             if (currentNode.data == data)
+            //             {
+            //                 return true;
+            //             }
+            //             else
+            //             {
+            //                 currentNode = currentNode.right;
+            //             }
+            // 
+            //         }
+            //     }
+            // }
+            // return false;
+            // ------------------------------------------------------
+            Node currentNode = root;
+            while (currentNode != null)
+            {
+                if (currentNode.data == data)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (currentNode.data > data)
+                    {
+                        currentNode = currentNode.left;
+                    }
+                    else
+                    {
+                        currentNode = currentNode.right;
+                    }
+                }
+            }
+            return false;
         }
     }
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            #region 인접 리스트
-            // 그래프의 각 정점에 인접한 정점들을 연결 리스트로 표현하는 방법입니다.
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            binarySearchTree.Insert(10);
+            binarySearchTree.Insert(7);
+            binarySearchTree.Insert(12);
+            binarySearchTree.Insert(5);
+            binarySearchTree.Insert(9);
+            binarySearchTree.Inorder(binarySearchTree.root);
 
-            // 장점
-            // 그래프의 모든 간선의 수를 O(V+E)로 표현할 수 있습니다ㅏ.
+            Console.WriteLine();
 
-            //단점
-            // 두 정점을 연결하는 간선을 조회하거나 정점의 차수를 알기 위해서 정점의 인접리스트를 모두 탐색해야 하므로,
-            // 정점의 차수만큼의 시간이 필요합니다.
+            Console.WriteLine("BinarySearchTree FInd ( 9 ) : " + binarySearchTree.Find(9));
+            Console.WriteLine("BinarySearchTree FInd ( 11 ) : " + binarySearchTree.Find(11));
 
-            #endregion
         }
     }
 }

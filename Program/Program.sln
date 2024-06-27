@@ -27,9 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class10th (Hash Table)", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class11th(Binary Tree)", "..\Class11th(Binary Tree)\Class11th(Binary Tree).csproj", "{ECAC7583-A947-4A71-A266-3DA7E22150D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class12th (Heap)", "..\Class12th (Heap)\Class12th (Heap).csproj", "{94AB5195-FC32-4366-8245-A5D6B892FBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class12th (Heap)", "..\Class12th (Heap)\Class12th (Heap).csproj", "{94AB5195-FC32-4366-8245-A5D6B892FBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class13th (Graph Adjacency Matrix)", "..\Class13th (Graph Adjacency Matrix)\Class13th (Graph Adjacency Matrix).csproj", "{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class13th (Graph Adjacency Matrix)", "..\Class13th (Graph Adjacency Matrix)\Class13th (Graph Adjacency Matrix).csproj", "{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class14th ( Graph Adjacency List)", "..\Class14th ( Graph Adjacency List)\Class14th ( Graph Adjacency List).csproj", "{CD23F743-6D10-4834-B6D8-601B7C19359E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
