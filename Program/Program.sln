@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class12th (Heap)", "..\Clas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class13th (Graph Adjacency Matrix)", "..\Class13th (Graph Adjacency Matrix)\Class13th (Graph Adjacency Matrix).csproj", "{D2840E38-1FE9-4C78-90BF-88CBE4BB8F9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class14th ( Graph Adjacency List)", "..\Class14th ( Graph Adjacency List)\Class14th ( Graph Adjacency List).csproj", "{CD23F743-6D10-4834-B6D8-601B7C19359E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class14th ( Graph Adjacency List)", "..\Class14th ( Graph Adjacency List)\Class14th ( Graph Adjacency List).csproj", "{CD23F743-6D10-4834-B6D8-601B7C19359E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class15th (Binary Search Tree)", "..\Class15th (Binary Search Tree)\Class15th (Binary Search Tree).csproj", "{066CEC69-F88B-41BA-BD14-08F7F716945E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD23F743-6D10-4834-B6D8-601B7C19359E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066CEC69-F88B-41BA-BD14-08F7F716945E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066CEC69-F88B-41BA-BD14-08F7F716945E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066CEC69-F88B-41BA-BD14-08F7F716945E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066CEC69-F88B-41BA-BD14-08F7F716945E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
